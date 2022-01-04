@@ -1,0 +1,113 @@
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-md-12 header" >LOGO</div>
+  </div>
+  <div class="row">
+  <div class="col-md-12 mainNav">
+   Fetch Details
+  </div>
+</div>
+<div class="row" style="margin-top: 10px;">
+   <div class="col-md-12 " style="text-align: center;">
+          <span>Product Name: </span>
+           <select style="width: 200px;"
+           name="selectedVal"
+           [(ngModel)]="selectedVal" 
+         >
+            <option  *ngFor="let item of product" value="{{item.id}}">
+             {{item.productName}}
+           </option>
+         </select>
+         <button type="button" style="margin-left: 10px;" class="btn btn-primary" (click)="getProduct()">Get</button>
+   </div>
+   <div class="row">
+       <div class="col-2"></div>
+       <div class="col-8">  <form>
+           <div class="row mb-3">
+             <label for="inputEmail3" class="col-sm-2 col-form-label">Product Name</label>
+             <div class="col-sm-10">
+               <input type="text" name="model.productName" [(ngModel)]="model.productName" class="form-control" id="inputEmail3">
+             </div>
+           </div>
+           <div class="row mb-3">
+             <label for="inputPassword3" class="col-sm-2 col-form-label">Short Description</label>
+             <div class="col-sm-10">
+               <input type="text" name="model.shortDescription" [(ngModel)]="model.shortDescription" class="form-control" id="inputPassword3">
+             </div>
+           </div>
+           <div class="row mb-3">
+               <label for="inputPassword3" class="col-sm-2 col-form-label">Detailed Description</label>
+               <div class="col-sm-10">
+                 <input type="text" name="model.detailedDescription" [(ngModel)]="model.detailedDescription" class="form-control" id="inputPassword3">
+               </div>
+             </div>
+             <div class="row mb-3">
+               <label for="inputPassword3" class="col-sm-2 col-form-label">Category</label>
+               <div class="col-sm-10">
+                 <input type="text" name="model.category" [(ngModel)]="model.category" class="form-control" id="inputPassword3">
+               </div>
+             </div>
+             <div class="row mb-3">
+               <label for="inputPassword3" class="col-sm-2 col-form-label">Starting Price</label>
+               <div class="col-sm-10">
+                 <input type="text" name="model.startingPrice" [(ngModel)]="model.startingPrice" class="form-control" id="inputPassword3">
+               </div>
+             </div>
+             <div class="row mb-3">
+               <label for="inputPassword3" class="col-sm-2 col-form-label">bid End Date</label>
+               <div class="col-sm-10">
+                 <input type="text" name="model.bidEndDate" [(ngModel)]="model.bidEndDate" class="form-control" id="inputPassword3">
+               </div>
+             </div>
+         
+         
+         </form></div>
+       <div class="col-2"></div>
+     
+   </div>
+
+  <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8" style="background-color: lightgray; text-align: center;">Bids</div>
+      <div class="col-2"></div>
+  </div>
+  <div class="row">
+   <div class="col-2"></div>
+   <div class="col-8">
+       <table class="table table-bordered">
+           <thead>
+             <tr>
+               <th scope="col">Bid Amount</th>
+               <th scope="col">Name</th>
+               <th scope="col">Email</th>
+               <th scope="col">Mobile</th>
+             </tr>
+           </thead>
+           <tbody  *ngFor="let bid of model.bidsforProd">
+             <tr bids>
+               <th scope="row">{{bid.bidAmount}}</th>
+               <td>{{bid.firstName}}</td>
+               <td>{{bid.email}}</td>
+               <td>{{bid.phone}}</td>
+             </tr>
+          
+           </tbody>
+         </table>
+   </div>
+   <div class="col-2"></div>
+</div>
+   <!-- <div calss="col-sm-4" > 
+       <select
+       name="selectedVal"
+       [(ngModel)]="selectedVal" 
+     >
+        <option  *ngFor="let item of model" value="{{item.productId}}">
+         {{item.productName}}
+       </option>
+     </select></div>
+   
+   <div calss="col-sm-4"><button type="button" class="btn btn-primary">Primary</button></div> -->
+  
+ </div>
+ </div>
+ 
